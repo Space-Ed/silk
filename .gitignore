@@ -1,1 +1,4 @@
-.log
+*.log
+
+diagrams/png/*
+diagrams/svg/*
