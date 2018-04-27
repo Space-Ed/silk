@@ -1,16 +1,10 @@
 
 choice(
-    line('/', loop('/id', '/')),
-    loop(
-        line(
-            opt('-'),
-            choice(
-                '/id',
-                line('#','/id'),
-                '**',
-                '*'
-            ),
-        ),
-        '/logical operator'
-    )
+    line('{', '/selector', '}'),
+    line('/selector', '&', '/selector'),
+    line('/selector', '|', '/selector'),
+    line('-', '/selector'),
+    '/id',
+    line('#','/id'),
+    '*'
 )
