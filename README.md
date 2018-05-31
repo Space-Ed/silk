@@ -6,14 +6,26 @@ __A language of elegance where data flows are woven freely and expressively, whe
 
 ## Motivation
 
-Programming is ugly, and this makes creating programs more arduous than it needs to be. Even the most hardcore lambda calculus touting languages have a shadow of deep lopsidedness about them. Silk is an attempt to create a programming language based on conceptual balance and neccessity. To many it will appear strange and esoteric, rather than beautiful. This is because it operates with a totally different set of constructs; for it's constructs like classes, functions, variables and for-loops that create asymettry and bias that ultimately causes us to write twisted intractable and verbose code. The world we see is one distorted by the concepts we are familiar with, though they may be ultimately arbitrary. This project is an attempt to create a language which challenges our ideas about programming, and although it may be another arbitrary stab based on one person's experiences and explorations it could well open some doors to real development in how we think about programs. Many languages have libraries with toolkits for streams, queries, asynchronicity, functional programming and other important tasks that should be more naturally expressed with the right syntactic forms. This is what this language will do and hence offers the prospect of compiling onto many target platforms.
+Programming is ugly, and this makes creating programs more arduous than it needs to be. Silk is an attempt to create a programming language based on conceptual balance and neccessity. At first it will likely appear strange and esoteric, rather than beautiful because it is so different to what most of us are used to. It operates without classes, functions, variables and for-loops. It is believed these are what create the asymettry that ultimately causes us to write twisted, intractable and verbose code.
 
-## Key Concepts
+The world we see is one distorted by the concepts we are familiar with, though they may be ultimately arbitrary in the grand schema. This project is an attempt to create a language which challenges our ideas about programming and hopefully leads to a leap forward in the effectiveness of our collective intellect commanding information technology.
+
+Many languages have libraries with toolkits for streams, queries, asynchronicity, functional programming and other important tasks that should be more naturally expressed with the right syntactic forms. This is what this language will do seamlessly and hence offers the prospect of compiling onto many target platforms.
+
+## Metaphysics
+The bi-dichotomy of substance
+
+#### Axis 1: Nature: Mind and Body
+  - Determinate existence is that of bodies, complex and simple, which are all objective creation. Write, Push, Positive, Yang, Synthesis
+  - Experienced existence is that of minds, complex and simple which is the subjective awareness of all things. Read, Pull, Negative, Yin, Analysis
+#### Axis 2: Mode: Manifest and Ephemeral
+  - Our reality, including it's composite parts of both Natures is actual and operational, including by extention all there is to see and touch.
+  - Our ideality, the space of all values concievable, the platonic space of concepts according to all that may be created and experienced.
+
+programming is the art of combining, and translating between the above aspects.
 
 ### A Dualistic Language
-in most languages we deal with values of various kinds which are usually abstracted to an operable object around the core concept of a conjunction of bits of information. These values are all sharing some core features
-
-silk in contrast has two categories of language expression, that belong to the analytic and synthetic facilities of the language. These two kinds have different interpretations of identifiers, the analytic treats identifiers as outputs, that represents the result of the analysis, synthetic treats identifiers as inputs that represents the sources of determination for the final product.
+silk has two categories of language expression, that belong to the analytic and synthetic facilities of the language. These two kinds have different interpretations of identifiers, the analytic treats identifiers as outputs, that represents the result of the analysis, synthetic treats identifiers as inputs that represents the sources of determination for the final product.
 
 One may consider this distinction as equivalent to the mind and body, one is tasked with experiencing and the other with enacting concrete change. The interplay of these elements is what drives computation and they are mutually dependent without objects to analyse cognition is useless and without recieving stimulus there is no way to produce appropriate responses.
 
@@ -31,8 +43,6 @@ in a visor whose primary input is the object to decompose, treats portal express
 in a series our primary input is at the beginning which flows through its child cells in sequence to it's end which is it's primary output.
 
 the series must be explicit about it's inputs and outputs and may compatibilise by rebinding of channel names, channels that are opened at input will send forward in the sequence to the subcells that accept those channels as inputs and subcells that send on particular channels will be passed out where the output is openned
-
-
 
 There is between these distinct forms a common abstract type which facilitates the transfer of information between points of a program, these nodes are called contacts, a contact is either an input or an output and can be downstream or upstream (respectively) from zero or more corresponding outputs and inputs. A contact belonging to a node can
 
@@ -70,8 +80,8 @@ our 2 fundamentally distinct behaviours are whether to swallow and manifest or t
 - base:
 -
 
-### Vacuum
-A vacuum is a structure whose primary function is to scan through incoming data and produce appropriate output, therefore it serves the role of dereferent, iterator, reducer and decider. The default mode is a filter which outputs the parts of the incoming structure that match  
+### Visor
+A visor is a structure whose primary function is to scan incoming data and produce appropriate output, therefore it serves the role of dereferent, iterator, reducer and conditional. The default mode is a filter which outputs the parts of the incoming structure that match  
 ![vacuum](diagrams/svg/vacuum_syntax.svg)
 ![selector](diagrams/svg/selector_syntax.svg)
 
@@ -100,7 +110,7 @@ silk init platform-name
 #### Running
 start a silk program
 ```sh
-silk run
+silk runE
 ```
 
 #### Compiling
@@ -110,5 +120,17 @@ download the module
 ```
 silk install module-name
 ```
+events
+Timestamps
+Versions
 
-## Concepts
+
+## Execution Models
+
+the syntax and core forms described could potentially encode for a plethora of different behaviours depending on how the implementions treat topics such as asynchronicity, blocking, recursion.
+
+In essence the code produces an abstract syntax tree which is turned into an execution graph which becomes a number of buffers, executor threads and platform calls that are modelled in the implementing language.
+
+The idea is to have a precise specification for how the language produces a graph which could be interpreted in a variety of distinct operational contexts, from Infrastructure as Code, to LLVM bytecode to
+
+It is not however a one directional affair, there are certain actions which will modify the graph itself and these are essential to the operation to work not from the ground but also from within the program itself.
