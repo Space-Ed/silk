@@ -15,10 +15,10 @@ Many languages have libraries with toolkits for streams, queries, asynchronicity
 ## Metaphysics
 The bi-dichotomy of substance
 
-#### Axis 1: Nature: Mind and Body
+#### Axis 1: Nature: Subject and Object
   - Determinate existence is that of bodies, complex and simple, which are all objective creation. Write, Push, Positive, Yang, Synthesis
   - Experienced existence is that of minds, complex and simple which is the subjective awareness of all things. Read, Pull, Negative, Yin, Analysis
-#### Axis 2: Mode: Manifest and Ephemeral
+#### Axis 2: Mode: Manifest and Representative
   - Our reality, including it's composite parts of both Natures is actual and operational, including by extention all there is to see and touch.
   - Our ideality, the space of all values concievable, the platonic space of concepts according to all that may be created and experienced.
 

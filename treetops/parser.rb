@@ -4,12 +4,10 @@ require 'yaml'
 
 Treetop.load 'grammar'
 
-parser = SilkFileGrammarParser.new
+parser = SilkParser.new
 
-if parser.parse('hello<=value')
+if parser.parse('hello<=**')
   puts YAML::dump(parser)
 else
   puts parser.failure_reason
-  puts parser.failure_line
-  puts parser.failure_column
 end

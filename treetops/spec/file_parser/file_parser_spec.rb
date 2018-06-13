@@ -1,22 +1,51 @@
 require 'polyglot'
 require 'treetop'
-require 'yaml'
+require 'rspec/expectations'
 
 Treetop.load 'grammar'
+parser = SilkParser.new
 
-describe SilkFileGrammarParser do
-  context "loading files into the parser" do
-    parser = SilkFileGrammarParser.new
+RSpec::Matchers.define :be_silk do
+  match do |code|
+    parser.parse(code)
+  end
+  failure_message do |code|
+    parser.failure_reason
+  end
+end
 
-    it "should parse a simple constant declaration" do
-      result = parser.parse "hello<=value"
-      expect(result).to_not be_nil
+describe SilkParser do
+  context "loading strings into the parser" do
+
+    it "index expressions parse" do
+      expect('<=**').to be_silk
+      expect('root|=/').to be_silk
+      expect('alias<=/bling').to be_silk
+      expect('|=//').to_not be_silk
+      expect('|=primary').to be_silk
+
     end
 
-    it "should parse to a serializable format" do
-      result = parser.parse "hello<=value"
+    it "should parse constructs" do
+      expect('|=<x:0>').to be_silk
+      expect('|=<x:"hello \"world \" a" y:2>').to be_silk
+
     end
 
+    it "should parse visors" do
+      expect('|={id:"Hello"}').to be_silk
+      expect('|={id#tag#tag}')
+    end
+
+    it "should parse everything" do
+      expect("
+|=<
+  visor:{
+    number: 0
+    derived: %(~ < 3)
+  }
+>").to be_silk
+    end
 
   end
 

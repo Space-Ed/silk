@@ -1,10 +1,16 @@
 
-OUTPUT_TYPE=$1
+if [ ! -e $1 ]
+then
+  OUTPUT_TYPE=$1
+else
+  OUTPUT_TYPE='png'
+fi
+
 DIAGRAM_SOURCES='diagrams/src'
 DIAGRAM_OUT="diagrams/$OUTPUT_TYPE"
 
 function run_syntrax () {
-  syntrax -i $source -o $target -s syntrax.ini > $log
+  syntrax -i $source -o $target -s diagrams/syntrax.ini 
 }
 
 function start_watch (){

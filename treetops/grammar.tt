@@ -1,24 +1,119 @@
-grammar SilkFile
+grammar Silk
 
   rule top_level_declaration
-    alias? assignment value
+    alias? _ assignment _ (index / value)
   end
 
   rule assignment
     '<=' / '|='
   end
 
-  rule word
-    [a-zA-Z]+
+  rule index
+    ('/' index_tail?) / index_tail
+  end
+
+  rule index_tail
+    ((id '/')* (id / glob))
+  end
+
+  rule _
+    [\s\n\t]*
+  end
+
+  rule __
+    [\s\n\t]+
+  end
+
+  rule glob
+    '**' / '*'
   end
 
   rule alias
-    word
+    id  ('/' id)*
   end
 
   rule value
-    template( construct / visor / string )
+    template / construct / visor / chain / string / operations / number / boolean / portal / reference
   end
 
+  rule reference
+    '/' alias ( '(' value ')' )?
+  end
+
+  rule template
+    '`' (construct / visor / chain)
+  end
+
+  rule number
+    '-'? [0-9] [0-9]*
+  end
+
+  rule construct
+    '<' _ (  id? _ ('#' id _)* _ ':' _ value _ )* '>'
+  end
+
+  rule visor
+    '{' _ (selector _ ':' _ value _ )* '}'
+  end
+
+  rule string
+    '"' (([\\] '"') / [^"])* '"'
+  end
+
+  rule operations
+    '%' '(' op_exp ')'
+  end
+
+  rule op_exp
+    (op_base _ ops _ op_exp) / op_base
+  end
+
+  rule op_base
+    ( '(' op_exp ')' ) / number / boolean / portal
+  end
+
+  rule ops
+    ('<=' / '<' / '>' / '>=' / '=' / '&' / '|' / '%' / '^' / '*' / '/' / '+' / '-')
+  end
+
+  rule boolean
+    ('T' / 'F')
+  end
+
+  rule portal
+    ('@' / selector) '~' id? ('.' id)*
+  end
+
+  rule selector
+     selector_or / '*' / ''
+  end
+
+  rule selector_base
+    '-'? (('(' selector_or ')') / ('#' id) / id)
+  end
+
+  rule selector_or
+    selector_and ( '|' selector_and )*
+  end
+
+  rule selector_and
+    selector_base ( '&' selector_base )*
+  end
+
+  rule id
+    [a-zA-Z_$]+
+  end
+
+  rule chain
+    left_wing value ((( _ '|' _ ) / _) value )* right_wing
+  end
+
+  rule left_wing
+    ('+' / '-')? '[' (( '+' / '-')? id? ( '=' (id / '*')?)?)*
+  end
+
+  rule right_wing
+    (( (id / '*')? '=' )? id? ('+' / '-' )? )* ']' ('+' / '-')?
+  end
 
 end

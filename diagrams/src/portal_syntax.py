@@ -1,6 +1,5 @@
 line(
     choice(
-        loop(None, line(' / ', '/id')),
         '/selector',
         '@'
     ),
