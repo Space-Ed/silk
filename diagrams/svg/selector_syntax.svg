@@ -27,9 +27,9 @@ width="332" height="256" version="1.1">
     <path d="M0,0 L0.5,2 L0,4 L4.5,2 z" fill="#000000" />
   </marker>
 </defs>
-<rect width="100%" height="100%" fill="white"/><path d="M76.0,39.0 A15.0,15.0 0 0,1 76.0,9.0 H83.0 A15.0,15.0 0 0,1 83.0,39.0 z" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
-<rect x="117.0" y="10.0" width="69.0" height="28.0" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
-<path d="M220.0,39.0 A15.0,15.0 0 0,1 220.0,9.0 H227.0 A15.0,15.0 0 0,1 227.0,39.0 z" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
+<rect width="100%" height="100%" fill="white"/><path d="M76.0,39.0 A15.0,15.0 0 0,1 76.0,9.0 H78.0 A15.0,15.0 0 0,1 78.0,39.0 z" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
+<rect x="112.0" y="10.0" width="69.0" height="28.0" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
+<path d="M215.0,39.0 A15.0,15.0 0 0,1 215.0,9.0 H217.0 A15.0,15.0 0 0,1 217.0,39.0 z" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
 <rect x="61.0" y="46.0" width="69.0" height="28.0" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
 <path d="M164.0,75.0 A15.0,15.0 0 0,1 164.0,45.0 H174.0 A15.0,15.0 0 0,1 174.0,75.0 z" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
 <rect x="208.0" y="46.0" width="69.0" height="28.0" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
@@ -43,14 +43,14 @@ width="332" height="256" version="1.1">
 <rect x="120.0" y="188.0" width="26.0" height="28.0" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
 <path d="M76.0,253.0 A15.0,15.0 0 0,1 76.0,223.0 H79.0 A15.0,15.0 0 0,1 79.0,253.0 z" stroke="none" fill-opacity="0.498039215686" fill="#000000"/>
 <circle cx="9" cy="20.0" r="3" stroke="#000000" stroke-width="2" fill="#FFFFFF"/>
-<path d="M73.0,36.0 A15.0,15.0 0 0,1 73.0,6.0 H80.0 A15.0,15.0 0 0,1 80.0,36.0 z" stroke="#000000" stroke-width="2" fill="#B3E5FC"/>
-<text class="token_font" x="76.5" y="27.5">{</text>
-<rect x="114.0" y="7.0" width="69.0" height="28.0" stroke="#000000" stroke-width="2" fill="#90A4AE"/>
-<text class="box_font" x="148.5" y="27.5">selector</text>
-<line x1="95.0" y1="20.0" x2="109.0" y2="20.0" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
-<path d="M217.0,36.0 A15.0,15.0 0 0,1 217.0,6.0 H224.0 A15.0,15.0 0 0,1 224.0,36.0 z" stroke="#000000" stroke-width="2" fill="#B3E5FC"/>
-<text class="token_font" x="220.5" y="27.5">}</text>
-<line x1="183.0" y1="20.0" x2="197.0" y2="20.0" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M73.0,36.0 A15.0,15.0 0 0,1 73.0,6.0 H75.0 A15.0,15.0 0 0,1 75.0,36.0 z" stroke="#000000" stroke-width="2" fill="#B3E5FC"/>
+<text class="token_font" x="74.0" y="27.5">(</text>
+<rect x="109.0" y="7.0" width="69.0" height="28.0" stroke="#000000" stroke-width="2" fill="#90A4AE"/>
+<text class="box_font" x="143.5" y="27.5">selector</text>
+<line x1="90.0" y1="20.0" x2="104.0" y2="20.0" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M212.0,36.0 A15.0,15.0 0 0,1 212.0,6.0 H214.0 A15.0,15.0 0 0,1 214.0,36.0 z" stroke="#000000" stroke-width="2" fill="#B3E5FC"/>
+<text class="token_font" x="213.0" y="27.5">)</text>
+<line x1="178.0" y1="20.0" x2="192.0" y2="20.0" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
 <rect x="58.0" y="43.0" width="69.0" height="28.0" stroke="#000000" stroke-width="2" fill="#90A4AE"/>
 <text class="box_font" x="92.5" y="63.5">selector</text>
 <path d="M161.0,72.0 A15.0,15.0 0 0,1 161.0,42.0 H171.0 A15.0,15.0 0 0,1 171.0,72.0 z" stroke="#000000" stroke-width="2" fill="#B3E5FC"/>
@@ -82,7 +82,7 @@ width="332" height="256" version="1.1">
 <path d="M73.0,250.0 A15.0,15.0 0 0,1 73.0,220.0 H76.0 A15.0,15.0 0 0,1 76.0,250.0 z" stroke="#000000" stroke-width="2" fill="#B3E5FC"/>
 <text class="token_font" x="74.5" y="241.5">*</text>
 <line x1="29" y1="20.0" x2="53.0" y2="20.0" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
-<line x1="240.0" y1="20.0" x2="304.0" y2="20.0" stroke="#000000" stroke-width="2" />
+<line x1="230.0" y1="20.0" x2="304.0" y2="20.0" stroke="#000000" stroke-width="2" />
 <path d="M38.0,29.0 A9,9 0 0,0 29.0,20.0" stroke="#000000" stroke-width="2" fill="none"/>
 <line x1="47" y1="56.0" x2="53.0" y2="56.0" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
 <line x1="275.0" y1="56.0" x2="281.0" y2="56.0" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />

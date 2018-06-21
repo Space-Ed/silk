@@ -4,7 +4,7 @@ choice(
         opt('`'),
         choice(
             "/construct",
-            "/scanner",
+            "/visor",
             "/series"
         ),
     ),
@@ -12,5 +12,6 @@ choice(
     "/regex",
     "/numeric",
     "/template",
-    "/portal"
+    "/portal",
+    "/reference"
 )

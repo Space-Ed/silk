@@ -1,5 +1,5 @@
 line(
-    '(',
+    '{',
     loop(
         line(
             choice(None, line('/id','=')),
@@ -9,5 +9,5 @@ line(
         ),
         ';'
     ),
-    ')'
+    '}'
 )

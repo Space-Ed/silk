@@ -1,4 +1,3 @@
-
 if [ ! -e $1 ]
 then
   OUTPUT_TYPE=$1
@@ -10,12 +9,16 @@ DIAGRAM_SOURCES='diagrams/src'
 DIAGRAM_OUT="diagrams/$OUTPUT_TYPE"
 
 function run_syntrax () {
-  syntrax -i $source -o $target -s diagrams/syntrax.ini 
+  cat $source > $tmp
+  cat "$DIAGRAM_SOURCES/links.py" >> $tmp
+  syntrax -i $tmp -o $target -s diagrams/syntrax.ini
+  rm $tmp
 }
 
 function start_watch (){
   name=$(echo $1 | cut -d '.' -f 1)
   source="$DIAGRAM_SOURCES/$1"
+  tmp="$DIAGRAM_SOURCES/tmp/$1.tmp"
   target="$DIAGRAM_OUT/$name.$OUTPUT_TYPE"
   log=$name.log
 
