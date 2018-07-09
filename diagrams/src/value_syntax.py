@@ -1,17 +1,16 @@
 
 choice(
-    line(
-        opt('`'),
-        choice(
-            "/construct",
-            "/visor",
-            "/series"
-        ),
-    ),
+    "/construct",
+    "/visor",
+    "/chain",
+    "/reference",
     "/string",
     "/regex",
-    "/numeric",
+    "/number",
     "/template",
+    "/field",
     "/portal",
-    "/reference"
+    "/conditional",
+    "/association",
+    "/operation"
 )

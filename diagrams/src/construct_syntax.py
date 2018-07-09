@@ -1,13 +1,11 @@
-line('<',
-    loop(choice(
+line('{',
+    opt('/left_wing'),
+    loop(
         line(
-            opt('/id'),
-            loop(opt('#', '/id'), None),
-            ':',
             '/value',
-            opt('!')
             )
-        ),
-        ','
-    )
-,'>')
+        ,
+        None
+    ),
+    opt('/right_wing')
+,'}')

@@ -8,7 +8,9 @@ line(
         None,
         line(
             '(',
-            '/value',
+            opt('/left_wing'),
+            loop('/value',None),
+            opt('/right_wing'),
             ')'
         )
     )

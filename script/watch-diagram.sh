@@ -8,15 +8,20 @@ fi
 DIAGRAM_SOURCES='diagrams/src'
 DIAGRAM_OUT="diagrams/$OUTPUT_TYPE"
 
+#clean output directory
+rm $DIAGRAM_OUT/*
+
 function run_syntrax () {
   cat $source > $tmp
   cat "$DIAGRAM_SOURCES/links.py" >> $tmp
-  syntrax -i $tmp -o $target -s diagrams/syntrax.ini
+  syntrax -i $tmp -o $target -s diagrams/syntrax.ini --title=$name
   rm $tmp
 }
 
 function start_watch (){
-  name=$(echo $1 | cut -d '.' -f 1)
+  regex='^(.*)_syntax\.py'
+  [[ $1 =~ $regex ]]
+  name=$(echo ${BASH_REMATCH[1]})
   source="$DIAGRAM_SOURCES/$1"
   tmp="$DIAGRAM_SOURCES/tmp/$1.tmp"
   target="$DIAGRAM_OUT/$name.$OUTPUT_TYPE"

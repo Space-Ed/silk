@@ -1,13 +1,12 @@
 line(
-    '{',
+    '<',
+    opt('/left_wing'),
     loop(
         line(
-            choice(None, line('/id','=')),
-            '/selector',
-            ':',
-            '/value',opt('?')
+            '/value'
         ),
-        ';'
+        None
     ),
-    '}'
+    opt('/right_wing'),
+    '>'
 )

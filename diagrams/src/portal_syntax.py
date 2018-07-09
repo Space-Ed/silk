@@ -1,9 +1,9 @@
 line(
     choice(
-        '/selector',
+        '/value',
         '@'
     ),
     '~',
     choice(None, '/id'),
-    choice(None, loop( line('.', '/id'), None ))
+    choice(None, loop( line('.', '/value'), None ))
 )
