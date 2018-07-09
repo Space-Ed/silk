@@ -13,7 +13,11 @@ grammar Silk
   end
 
   rule index_tail
-    ((id '/')* (id / glob))
+    ((id '/')* (id / '*'))
+  end
+
+  rule alias
+    id  ('/' id)*
   end
 
   rule _
@@ -24,96 +28,116 @@ grammar Silk
     [\s\n\t]+
   end
 
-  rule glob
-    '**' / '*'
-  end
-
-  rule alias
-    id  ('/' id)*
-  end
-
   rule value
-    template / construct / visor / chain / string / operations / number / boolean / portal / reference
+    left_value right_value
   end
 
-  rule reference
-    '/' alias ( '(' value ')' )?
+  rule left_value
+    template / field / construct / visor / chain / operations / string / number / boolean / reference / id / portal / association / conditional
+  end
+
+  rule right_value
+    conditional / association / portal / ''
+  end
+
+  rule null
+    '_'
+  end
+
+  rule everything
+    '*'
+  end
+
+  rule self
+    '@'
   end
 
   rule template
     '`' (construct / visor / chain)
   end
 
+  rule field
+    '^' value
+  end
+
   rule number
     '-'? [0-9] [0-9]*
-  end
-
-  rule construct
-    '<' _ (  id? _ ('#' id _)* _ ':' _ value _ )* '>'
-  end
-
-  rule visor
-    '{' _ (selector _ ':' _ value _ )* '}'
   end
 
   rule string
     '"' (([\\] '"') / [^"])* '"'
   end
 
-  rule operations
-    '%' '(' op_exp ')'
-  end
-
-  rule op_exp
-    (op_base _ ops _ op_exp) / op_base
-  end
-
-  rule op_base
-    ( '(' op_exp ')' ) / number / boolean / portal
-  end
-
-  rule ops
-    ('<=' / '<' / '>' / '>=' / '=' / '&' / '|' / '%' / '^' / '*' / '/' / '+' / '-')
-  end
-
   rule boolean
-    ('T' / 'F')
-  end
-
-  rule portal
-    ('@' / selector) '~' id? ('.' id)*
-  end
-
-  rule selector
-     selector_or / '*' / ''
-  end
-
-  rule selector_base
-    '-'? (('(' selector_or ')') / ('#' id) / id)
-  end
-
-  rule selector_or
-    selector_and ( '|' selector_and )*
-  end
-
-  rule selector_and
-    selector_base ( '&' selector_base )*
+    ('True' / 'False')
   end
 
   rule id
     [a-zA-Z_$]+
   end
 
+  rule conditional
+    '?' _ value _ value?
+  end
+
+  rule association
+    ':' _ value
+  end
+
+  rule portal
+    '~' id? ('.' id)*
+  end
+
+  rule sequence
+    (_ value _)+
+  end
+
+  rule reference
+    '/' alias ( '(' left_wing? _ sequence? _ right_wing? ')' )?
+  end
+
+  rule construct
+    '{' left_wing? _ sequence? _ right_wing? '}'
+  end
+
+  rule visor
+    '<' _ sequence? _ '>'
+  end
+
   rule chain
-    left_wing value ((( _ '|' _ ) / _) value )* right_wing
+    '[' left_wing? _ sequence _ right_wing? ']'
   end
 
   rule left_wing
-    ('+' / '-')? '[' (( '+' / '-')? id? ( '=' (id / '*')?)?)*
+    left_gate? (__ left_gate)* '|'
+  end
+
+  rule left_gate
+    (( '+' / '-')? id? ( '=' id?)?)
   end
 
   rule right_wing
-    (( (id / '*')? '=' )? id? ('+' / '-' )? )* ']' ('+' / '-')?
+    '|' right_gate? (__ right_gate)*
+  end
+
+  rule right_gate
+    ((id? '=' )? id? ('+' / '-')?)
+  end
+
+  rule operations
+    '(' op_exp ')'
+  end
+
+  rule op_exp
+    (op_base ( _ operator _ op_exp )+ ) / op_base
+  end
+
+  rule op_base
+    ( '(' op_exp ')' ) / value
+  end
+
+  rule operator
+    ('<=' / '<' / '>' / '>=' / '=' / '&' / '|' / '%' / '^' / '*' / '/' / '+' / '-')
   end
 
 end

@@ -18,23 +18,22 @@ describe SilkParser do
   context "loading strings into the parser" do
 
     it "index expressions parse" do
-      expect('<=**').to be_silk
-      expect('root|=/').to be_silk
-      expect('alias<=/bling').to be_silk
-      expect('|=//').to_not be_silk
-      expect('|=primary').to be_silk
-
+      expect('<= *').to be_silk
+      expect('root |= /').to be_silk
+      expect('alias <= /bling').to be_silk
+      expect('|= //').to_not be_silk
+      expect('|= primary').to be_silk
     end
 
     it "should parse constructs" do
-      expect('|=<x:0>').to be_silk
-      expect('|=<x:"hello \"world \" a" y:2>').to be_silk
+      expect('|=<{x:0}>').to be_silk
+      expect('|={x:"hello \"world \" a" y:2}').to be_silk
+
 
     end
 
     it "should parse visors" do
-      expect('|={id:"Hello"}').to be_silk
-      expect('|={id#tag#tag}')
+      expect('|=<id:"Hello">').to be_silk
     end
 
     it "should parse everything" do
@@ -42,7 +41,7 @@ describe SilkParser do
 |=<
   visor:{
     number: 0
-    derived: %(~ < 3)
+    derived: (~ < 3)
   }
 >").to be_silk
     end
