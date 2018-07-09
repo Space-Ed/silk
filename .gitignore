@@ -1,6 +1,5 @@
 *.log
 
 diagrams/png/*
-diagrams/svg/*
 
 treetops/spec/rspec-state.txt
