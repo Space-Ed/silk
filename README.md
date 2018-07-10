@@ -12,12 +12,12 @@ Programming is ugly, and this makes creating programs more arduous than it needs
 
 The world we see is one distorted by the concepts we are familiar with, though they may be ultimately arbitrary in the grand schema. This project is an attempt to create a language which challenges our ideas about programming and hopefully leads to a leap forward in the effectiveness of our collective intellect commanding information technology.
 
-we are talking about a migration from execution flow to information flow development since it is information that actually benefits people. People should be able to express ideas of how to create, transform, combine, distribute and consume information without having to think about
+we are talking about a migration from execution flow to information flow development since it is information that actually benefits people. People should be able to express ideas of how to create, transform, combine, distribute and consume information without having to think about the way the computer goes about doing it.
 
 
 ## Philosophy
 
-silk is founded in a philosophical framework which gives ground to the design decisions. As a language without statements, keywords, functions or classes there is a great deal to explain and this section will be of general interest to many as a treatment of functional aesthetics which could change the way we think about systems both organic and synthetic.
+silk is founded in a philosophical framework which gives ground to the design decisions. As a language without many of the usual standards there is a great deal to explain and this section will be of general interest to many as a treatment of functional aesthetics. The section lays down
 
 [more](doc/Philosophy.md)
 
@@ -41,7 +41,6 @@ addOne = (~ + 1)
 = core/*
 
 app = [
-  /core/init
   1
   /addOne
   /core/print
