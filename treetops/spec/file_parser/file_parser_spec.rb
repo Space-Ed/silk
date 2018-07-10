@@ -46,6 +46,14 @@ describe SilkParser do
 >").to be_silk
     end
 
+    it "should parse hello world" do
+      File.open("../examples/hello.silk") do |file|
+        contents = file.read
+        puts contents.rstrip
+        expect(contents).to be_silk
+      end
+    end
+
   end
 
 

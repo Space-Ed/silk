@@ -1,8 +1,6 @@
 |= /silk/*
 
-greeter |= [
+greeter |=[
   "Hello World"
-  /init
   /print
-  breathe
 ]

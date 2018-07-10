@@ -1,5 +1,9 @@
 grammar Silk
 
+  rule silk_file
+    _ top_level_declaration? (__ top_level_declaration)* _
+  end
+
   rule top_level_declaration
     alias? _ assignment _ (index / value)
   end
@@ -101,7 +105,7 @@ grammar Silk
   end
 
   rule visor
-    '<' _ sequence? _ '>'
+    '<' left_wing? _ sequence? _ right_wing? '>'
   end
 
   rule chain
@@ -113,7 +117,7 @@ grammar Silk
   end
 
   rule left_gate
-    (( '+' / '-')? id? ( '=' id?)?)
+    ( '+' / '-')? id? ( '=' id?)?
   end
 
   rule right_wing

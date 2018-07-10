@@ -1,0 +1,25 @@
+
+
+|= { @inject |
+  % at the beginning of the game a number is chosen at random
+
+  initial: [ - |
+    @~init
+    /random
+    `number:^~
+  ]
+
+  prompt: /prompt()
+
+  guess: [
+    prompt~
+
+    (~ = number~)?
+      correct~
+      incorrect~
+  ]
+
+  correct: [
+
+  ]
+}
