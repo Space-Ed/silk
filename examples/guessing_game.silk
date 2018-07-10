@@ -17,9 +17,10 @@
     (~ = number~)?
       correct~
       incorrect~
+
+    correct: [
+
+    ]
   ]
 
-  correct: [
-
-  ]
 }

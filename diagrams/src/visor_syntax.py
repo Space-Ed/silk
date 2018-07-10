@@ -3,7 +3,7 @@ line(
     opt('/left_wing'),
     loop(
         line(
-            '/value'
+            '-value'
         ),
         None
     ),

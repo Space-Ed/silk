@@ -1,6 +1,6 @@
 line(
-    '/value',
+    '-value',
     '?',
-    '/value',
-    opt('/value')
+    '+value',
+    opt('+value')
 )

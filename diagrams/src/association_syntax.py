@@ -1,5 +1,5 @@
 line(
-    opt('/value'),
+    opt('#value'),
     ':',
     '/value'
 )

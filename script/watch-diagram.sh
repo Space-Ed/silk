@@ -5,6 +5,16 @@ else
   OUTPUT_TYPE='png'
 fi
 
+if [ ! -e $2 ]
+then
+  FILE_NAME=$2
+else
+  FILE_NAME='all'
+fi
+
+DO_OUT=$3
+DO_WATCH=$4
+
 DIAGRAM_SOURCES='diagrams/src'
 DIAGRAM_OUT="diagrams/$OUTPUT_TYPE"
 
@@ -27,16 +37,26 @@ function start_watch (){
   target="$DIAGRAM_OUT/$name.$OUTPUT_TYPE"
   log=$name.log
 
-  run_syntrax
+  if [ $name == $FILE_NAME -o $FILE_NAME == 'all' ]; then
+    run_syntrax
 
-  inotifywait -m -e modify $source | (
-      while read;
-      do
-        run_syntrax
-      done
-  ) &
+    if [ "$DO_WATCH" == '-w' ]; then
+      echo "Starting Watch for" $1;
+      inotifywait -m -e modify $source | (
+          while read;
+          do
+            run_syntrax
+          done
+      ) &
+    fi
 
-  xdg-open $target
+    if [ "$DO_OUT" == '-o' ]
+    then
+      echo "opening target file $target"
+      xdg-open $target
+    fi
+
+  fi
 }
 
 function end_watches {
@@ -46,7 +66,6 @@ function end_watches {
 
 ls $DIAGRAM_SOURCES | grep "syntax.py" | (
   while read line; do
-    echo "Starting Watch for" $line;
     start_watch $line
   done
 )

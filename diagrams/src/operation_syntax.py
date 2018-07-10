@@ -1,13 +1,13 @@
 line(
     '(',
     choice(
-        '/value',
+        '+value',
         line(
-            '/value',
+            '+value',
             toploop(
                 line(
                     choice('<=' , '<' , '>' , '>=' , '=' , '&' , '|' , '%' , '**' , '*' , '+' , '-'),
-                    '/value'
+                    '+value'
                 ),
                 None
             ),
