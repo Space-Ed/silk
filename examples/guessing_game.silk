@@ -1,26 +1,65 @@
 
 
-|= { @inject |
-  % at the beginning of the game a number is chosen at random
+|= { -inject |
 
-  initial: [ - |
+  % at the beginning of the game a number is chosen at random
+  initial: [ = restart |
     @~init
-    /random
-    `number:^~
+    | = , restart= |
+    ~   `guesses:0   inject~
+    ~   /random  `number:^~  inject~
+    ~   ask~
   ]
+
+  % the move is to make a modification
+  inject:@~inject
 
   prompt: /prompt()
 
+  ask: [
+    "Pick A Number: "
+    prompt~display
+  ]
+
   guess: [
+    % when the prompt enters we will check that it equals the number
     prompt~
+
+    /parseInt
 
     (~ = number~)?
       correct~
       incorrect~
 
-    correct: [
-
-    ]
   ]
+
+  correct: [
+    %if correct you win the game and can play again
+    "You Win the Game!"
+    |=|
+    ~ /print
+    ~ play_again~
+  ]
+
+  incorrect: [
+    %decrement the number
+    "You lose the game"
+    |=|
+    ~ /print
+    ~ play_again~
+  ]
+
+  play_again: [
+    /prompt(
+      "play again"
+      validation:/Yes|No/
+      repeat: True
+    )
+    <
+      "Yes": ~ initial~reset
+      "No": /exit
+    >
+  ]
+
 
 }

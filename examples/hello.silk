@@ -2,9 +2,7 @@ print |= /io/print
 prompt |= /io/prompt
 exit  |= /sys/exit
 
-greeter |= [
-  4384
-  True
+|= [
   "Hello World"
   /print
 ]
@@ -15,7 +13,7 @@ ask_name |= [
   "Wilkommen ^(~), du bist toll"
 ]
 
-exit_message |= [
+exitmessage |= [
   ~ /print
   ~ /exit
 |-]
@@ -29,7 +27,7 @@ ask_name_conditional |= [
     "You are \"awesome\""
     "You are lame"
 
-  /exit_message
+  /exitmessage
 ]
 
 ask_name_validated |= [
