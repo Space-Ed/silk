@@ -1,6 +1,49 @@
-|= /silk/*
+print |= /io/print
+prompt |= /io/prompt
+exit  |= /sys/exit
 
-greeter |=[
+greeter |= [
+  4384
+  True
   "Hello World"
   /print
+]
+
+ask_name |= [
+  "Hi, what's your name?"
+  /prompt
+  "Wilkommen ^(~), du bist toll"
+]
+
+exit_message |= [
+  ~ /print
+  ~ /exit
+|-]
+
+
+ask_name_conditional |= [
+  /prompt("Hi, what's your name?")
+
+  (a + 3)
+  'Edward' ?
+    "You are \"awesome\""
+    "You are lame"
+
+  /exit_message
+]
+
+ask_name_validated |= [
+
+  %get the prompt and
+  asker: /prompt("Hi, what's your name?")
+
+  validator: [
+    asker ~are
+
+    % is the name composed of letters
+
+
+  ]
+
+  'whats'
 ]
