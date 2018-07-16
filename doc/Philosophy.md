@@ -1,13 +1,13 @@
 
 # The Dance of Symmettry and Distinction
 # The nine concepts
-# The Taxonomy of Systemiz
+# The Taxonomy of System
 
 To create the most pleasing programming experience it is essential to consider the irreducable dualisms of information systems. These dualisms are to be kept in balance and harmony as the language and machinery is designed and as the programs are written and executed.
 
 There count nine dualisms three in each of three categories.
 
-# Dualisms of Form 
+# Dualisms of Form
 ## representation - manifestation
 whether it is data or real system, literal or interpreted
 
@@ -37,7 +37,7 @@ the meaning of a term may depend on it's position in the system or be part of th
 ## anonymous - identifiable
 there is an implicit, default and primary was and an explicit, nominal and auxilliary way.
 
-_these concepts are transcribed into the language such that each can be engaged in isolation and in concert with each of the others therefore what follows is a description of how each form relates to each of these concepts in _
+_these concepts are transcribed into the language such that each can be engaged in isolation and in concert with each of the others therefore what follows is a description of how each form relates to each of these concepts in_
 
 a context is a container for a value, an expression is one of 14 forms which may provide infinitely many a finite number or zero contexts. An expression will evaluate to a value which may be fixed to a context.
 
@@ -109,7 +109,7 @@ the series must be explicit about it's inputs and outputs and may compatibilise 
 __On the common form of interfacess__
 There is between these distinct forms a common abstract type which facilitates the transfer of information between points of a program, these nodes are called contacts, a contact is either an input or an output and can be downstream or upstream (respectively) from zero or more corresponding outputs and inputs.
 
-
+__On Code and Data as Representation__
 Code is a representation of a process, such a process that may accept data as input and produce data as output. data is merely a process which has only one possilbe outcome, which is it's own representation. Therefore data is subset of code. Then what does code include? it includes the means to produce different results, depending on what input it is given.
 
 There are two forms of composite, constructs and vacuums. A construct is positive, the force acting to define. A vacuum is negative, the force that seeks definition. The presence of both forms is what drives computation.
@@ -118,11 +118,34 @@ the treatment of output and input is symmetric. it is possible to seek a source 
 
 data goes one way: from a fullness of data to a void of data. Therefore it is not neccessarily the way of the input to the output, if the input is itself a void.
 
+__On literal and manifest__
 you must decide what is literal and what is manifest, a process literal can be produced and provided as input, in order to be compiled to become a process it must manifest. To be manifest is to be attached in exactly one space. The attachment hierarchy carries to the absolute root and contains by extension all manifest processes. a literal can be interpreted as process or left as representation though eventually will become a primary representation in a terminal context, a string of characters in a console or pixel array of an image.
 
-to determine how representations are treated there are a number of distinct natures which apply to a space and are determined by the use of keyword context modifiers.
+
+## Statement of the push pull incompatibility question
+
+within the model of a graph linking sources to sinks there is a great rift abound
+
+The distinction of the push and pull, for we have in our model we have removed the caller from the situation.
+the caller was the very means to drive the computation of some other part of the code base.
+
+Does the appearance of data drive the computation downstream the results which derive from this become new as this wave propogates forth until it reaches a final consumer.
+
+OR
+
+Does the requirement of data drive the computation upstream to produce this next moment, from various sources that a blended together from until the eventual updated
+
+OR
+
+Is each position within this system continuously pulling and pushing as those parts become needy or eager and the neediness and eagerness is propogated with the information.
 
 
-How do we distill the essence of a system to it's most comprehensible and operable representation? This is the ultimate question and it hints at it's own solution. When we consider distilling the essence to be the compilation of code which is a representation of a system that is both comprehendig and operating.
+Are these ways fundamentally incompatible with inherently irreconcilable behaviour?
 
-at the heart of silk are a few important learnings, these are the fundamental design drivers that ultimately makes the tapesty flow nicely.
+OR
+
+Can they both be operated simultaneously within the bounds of some specifiable behaviour
+
+OR
+
+Do they require special syntax to say which kind we are using for each kind of interaction.

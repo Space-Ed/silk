@@ -1,18 +1,19 @@
 
 
-|= { -inject |
-
+guessing_game |= { -@inject |
+  ambient
   % at the beginning of the game a number is chosen at random
-  initial: [ = restart |
+  initial: [ restart |
     @~init
-    | = , restart= |
-    ~   `guesses:0   inject~
-    ~   /random  `number:^~  inject~
-    ~   ask~
-  ]
 
-  % the move is to make a modification
-  inject:@~inject
+    < = restart= |
+      [`guesses:0  | =inject]
+      [/random  `number:^  | =inject]
+      ask~
+    | =inject>
+
+  | =@inject ]
+  % external forwarding has active designation of the host
 
   prompt: /prompt()
 
@@ -52,9 +53,10 @@
   play_again: [
     /prompt(
       "play again"
-      validation:/Yes|No/
+      validation :
       repeat: True
     )
+
     <
       "Yes": ~ initial~reset
       "No": /exit

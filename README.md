@@ -31,9 +31,11 @@ Silk's syntax is perhaps it's only fixed point, while there is some flexibility 
 
 Silk code can be compiled to many targets, yet there is a common process by which the code is loaded from it's source files into the target. There is a core silk runtime, for desktop and server development, and a playbook for implementing targets other than the development environment and for .
 
-## Behaviour
+## [Behaviour](doc/Behaviour.md)
 
 where the former section is about how code is translated from it's textual artefacts(directories and files) into its live environment. This is about how it will operate from this point onward. This is the part of the specification for how to behave.
+
+
 
 ```
 

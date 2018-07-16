@@ -3,3 +3,5 @@
 diagrams/png/*
 
 treetops/spec/rspec-state.txt
+
+doc/tex/*.{fls,pdf, aux, fdb, gz}
