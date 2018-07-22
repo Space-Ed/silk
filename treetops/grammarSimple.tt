@@ -1,0 +1,98 @@
+grammar Silk
+
+  rule silk_file
+    (space? top_level_declaration space?)* <FileRule>
+  end
+
+  rule top_level_declaration
+    ref:ref? space? assignment space? obj:(index / value) <DefinitionRule>
+  end
+
+  rule assignment
+    '<=' / '|='
+  end
+
+  rule index
+    (('/' index_tail?) / index_tail) <IndexRule>
+  end
+
+  rule index_tail
+    ((id '/')* (id / '*'))
+  end
+
+  rule ref
+    id  ('/' id)*
+  end
+
+  rule space
+    [\s\n\t]+ <WhitespaceNode>
+  end
+
+  rule value
+    left_value space? right_value <ValueRule>
+  end
+
+  rule left_value
+    string / number / id / construct / reference / conditional
+  end
+
+  rule right_value
+    conditional / ('' <NullNode>)
+  end
+
+  rule reference
+    '/' ref ( '(' left_wing? space? sequence? space? right_wing? ')' )?
+  end
+
+  rule construct
+    '{' left:left_wing? space? sequence:sequence? space? right:right_wing? '}' <ConstructRule>
+  end
+
+  rule visor
+    '<' left_wing? space? sequence? space? right_wing? '>'
+  end
+
+  rule chain
+    '[' left_wing? space? sequence? space? right_wing? ']'
+  end
+
+  rule sequence
+    (space? value space?)+
+  end
+
+  rule left_wing
+    gates:(space? left_gate)* space? '|' <WingRule>
+  end
+
+  rule left_gate
+     gate:(outer:id inner:( op:flow_op inner:id?)?) <GateRule>
+  end
+
+  rule right_wing
+    '|' space? gates:(right_gate space?)* <WingRule>
+  end
+
+  rule right_gate
+    gate:(inner:(inner:id? op:flow_op )? outer:id) <GateRule>
+  end
+
+  rule flow_op
+    '=' / '<' / '>' / '><' / ''
+  end
+
+  rule conditional
+    '?' space? true_path:value space? false_path:value? <ConditionalRule>
+  end
+
+  rule number
+    '-'? [0-9] [0-9]*  <NumberNode>
+  end
+
+  rule id
+    [a-zA-Z_$]+ <SymbolNode>
+  end
+
+  rule string
+    '"' (([\\] '"') / [^"])* '"' <StringNode>
+  end
+end

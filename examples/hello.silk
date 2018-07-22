@@ -1,47 +1,6 @@
 print |= /io/print
-prompt |= /io/prompt
-exit  |= /sys/exit
 
 |= [
   "Hello World"
   /print
-]
-
-ask_name |= [
-  "Hi, what's your name?"
-  /prompt
-  "Wilkommen ^(~), du bist toll"
-]
-
-exitmessage |= [
-  ~ /print
-  ~ /exit
-|-]
-
-
-ask_name_conditional |= [
-  /prompt("Hi, what's your name?")
-
-  (a + 3)
-  'Edward' ?
-    "You are \"awesome\""
-    "You are lame"
-
-  /exitmessage
-]
-
-ask_name_validated |= [
-
-  %get the prompt and
-  asker: /prompt("Hi, what's your name?")
-
-  validator: [
-    asker ~are
-
-    % is the name composed of letters
-
-
-  ]
-
-  'whats'
 ]

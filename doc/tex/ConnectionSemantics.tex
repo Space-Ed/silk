@@ -1,0 +1,56 @@
+\documentclass[twocolumn]{article}
+\usepackage{mathtools}
+\usepackage{listings}
+
+\begin{document}
+\title{ $\phi$-Calculus: A formal semantics of the silk programming language}
+\author{Edward Dalley}
+\maketitle
+
+\begin{abstract}
+Here we describe a formal semantics for the interpretation of a class programs as an executable dynamic data-flow graph.
+This formal semantics is a specification for the behaviour of the silk programming language. As such the input axioms to the calculus are
+the fundamental forms that are represented by the code which conforms to the silk language grammar.
+\end{abstract}
+
+
+\section{Introduction}
+
+A silk program is a string of characters which can be reconised by the silk language grammar, which is descibed here.
+These programs are composed of varous structures each deriving from a single fundamental expression type called a value.
+We have the objective of converting these programs in a rigorous way into an executable structure
+which has a well defined sequence of internal changes for each well defined external interaction.
+
+\subsection{Phases}
+There are several stages to the interpretation of silk programs. Formulation, Connection, Conduction and execution
+\subsubsection{Encoding}
+This is how the parsed forms are translated into a common form, primative forms can be formulated without the application of connection rules
+
+A cell is a sequence of input contacts, a sequence of output contacts and a sequence of designations
+\[
+C : \langle I , O , D \rangle
+\]
+
+all contacts are distinct symbol values .
+
+all designators are a target  \(\langle \hat{r}, \bar{c}, v? \rangle \)
+
+we describe for each form the way that connections are created beteen entities within the context.
+
+\begin{tabular}{ l | r }
+  Syntactic Form && Semantic Form \\
+  \italic{p} && \( C: \langle (\phi), (\phi), \Phi \rangle \) \\
+\end{tabular}
+
+\begin{lstlisting}
+{a: b}
+\end{lstlisting}
+
+\section{Definitions}
+
+
+\(
+  \forall x \in X, \quad \exists y \leq \gamma
+\)
+
+\end{document}
