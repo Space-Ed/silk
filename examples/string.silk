@@ -8,5 +8,6 @@ construct <= { a=c |
   "words"
   "are"
   "false"
+  false
   | d=e
 }

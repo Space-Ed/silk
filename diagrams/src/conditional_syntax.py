@@ -2,5 +2,5 @@ line(
     '-value',
     '?',
     '+value',
-    opt('+value')
+    '+value'
 )

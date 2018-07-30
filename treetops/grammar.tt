@@ -73,7 +73,7 @@ grammar Silk
   end
 
   rule boolean
-    ('True' / 'False')
+    ('true' / 'false')
   end
 
   rule id

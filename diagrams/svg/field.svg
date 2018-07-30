@@ -6,22 +6,22 @@ xml:space="preserve"
 width="165" height="93" version="1.1">
 <style type="text/css">
 <![CDATA[
-.hash_font {fill:#000000; text-anchor:middle;
+.space_font {fill:#000000; text-anchor:middle;
+    font-family:Sans; font-size:10pt; font-weight:normal; font-style:normal;}
+.non-terminal_font {fill:#000000; text-anchor:middle;
     font-family:Times; font-size:14pt; font-weight:normal; font-style:italic;}
 .title_font {fill:#000000; text-anchor:middle;
     font-family:Sans; font-size:18pt; font-weight:normal; font-style:italic;}
+.hash_font {fill:#000000; text-anchor:middle;
+    font-family:Times; font-size:14pt; font-weight:normal; font-style:italic;}
 .negative_font {fill:#000000; text-anchor:middle;
     font-family:Times; font-size:14pt; font-weight:normal; font-style:italic;}
-.non-terminal_font {fill:#000000; text-anchor:middle;
+.definitive_font {fill:#000000; text-anchor:middle;
     font-family:Times; font-size:14pt; font-weight:normal; font-style:italic;}
-.space_font {fill:#000000; text-anchor:middle;
-    font-family:Sans; font-size:10pt; font-weight:normal; font-style:normal;}
 .charclass_font {fill:#000000; text-anchor:middle;
     font-family:Sans; font-size:16pt; font-weight:bold; font-style:normal;}
 .token_font {fill:#000000; text-anchor:middle;
     font-family:Sans; font-size:16pt; font-weight:bold; font-style:normal;}
-.definitive_font {fill:#000000; text-anchor:middle;
-    font-family:Times; font-size:14pt; font-weight:normal; font-style:italic;}
 .label {fill:#000;
   text-anchor:middle;
   font-size:16pt; font-weight:bold; font-family:Sans;}
@@ -38,8 +38,8 @@ width="165" height="93" version="1.1">
 <rect width="100%" height="100%" fill="white"/><circle cx="14.0" cy="66.0" r="3.0" stroke="#323232" stroke-width="2" fill="#623C47"/>
 <path d="M45.0,82.0 A15.0,15.0 0 0,1 45.0,52.0 H55.0 A15.0,15.0 0 0,1 55.0,82.0 z" stroke="#323232" stroke-width="2" fill="#DCDCDC"/>
 <text class="token_font" x="50.0" y="73.5">^</text>
-<rect x="84.0" y="53.0" width="51.0" height="28.0" stroke="#323232" stroke-width="2" fill="#FAC8C8"/>
-<text class="definitive_font" x="109.5" y="73.5">value</text>
+<rect x="84.0" y="52.0" width="51.0" height="30.0" stroke="#323232" stroke-width="2" fill="#FAC8C8"/>
+<text class="definitive_font" x="109.5" y="74.0">value</text>
 <line x1="70.0" y1="66.0" x2="79.0" y2="66.0" stroke="#323232" stroke-width="2" marker-end="url(#arrow)" />
 <line x1="16.0" y1="66.0" x2="25.0" y2="66.0" stroke="#323232" stroke-width="2" marker-end="url(#arrow)" />
 <circle cx="151.0" cy="66.0" r="3.0" stroke="#323232" stroke-width="2" fill="#623C47"/>

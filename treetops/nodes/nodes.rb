@@ -1,8 +1,4 @@
-require_relative 'association'
 require_relative 'primative'
-require_relative 'conditional'
-require_relative 'portal'
-require_relative 'whitespace'
 require_relative 'null'
 # require_relative 'chain'
 # require_relative 'construct'

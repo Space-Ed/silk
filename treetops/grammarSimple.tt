@@ -25,7 +25,7 @@ grammar Silk
   end
 
   rule space
-    [\s\n\t]+ <WhitespaceNode>
+    [\s\n\t]+
   end
 
   rule value
@@ -33,7 +33,7 @@ grammar Silk
   end
 
   rule left_value
-    string / number / id / construct / reference / conditional
+    string / number / id / boolean / construct / reference / conditional
   end
 
   rule right_value
@@ -95,4 +95,9 @@ grammar Silk
   rule string
     '"' (([\\] '"') / [^"])* '"' <StringNode>
   end
+
+  rule boolean
+    ('true' / 'false')
+  end
+
 end

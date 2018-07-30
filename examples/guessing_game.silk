@@ -9,8 +9,8 @@ guessing_game |= { -@inject |
     < = restart= |
       [`guesses:0  | =inject]
       [/random  `number:^  | =inject]
-      ask~
-    | =inject>
+      ~ask
+    | =inject, ask=(ask)>
 
   | =@inject ]
   % external forwarding has active designation of the host
@@ -19,20 +19,17 @@ guessing_game |= { -@inject |
 
   ask: [
     "Pick A Number: "
-    prompt~display
-  ]
+    ~display
+  | display=(prompt)display]
 
-  guess: [
+  guess: [ (prompt)=> , (number) <= number |
     % when the prompt enters we will check that it equals the number
-    prompt~
-
     /parseInt
 
-    (~ = number~)?
-      correct~
-      incorrect~
-
-  ]
+    (~ = ~number)?
+      ~correct
+      ~incorrect
+  | correct, incorrect]
 
   correct: [
     %if correct you win the game and can play again

@@ -9,7 +9,6 @@ choice(
     "/number",
     "/template",
     "/field",
-    "/portal",
     "/conditional",
     "/association",
     "/operation"

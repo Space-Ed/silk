@@ -1,11 +1,15 @@
 line(
     loop(
         line(
-            choice(None,'+','-'),
-            choice(None, '/id'),
-            opt('=', choice(None, '/id'))
+            choice(
+                line(choice(line('(', '#value', ')'), '@'), choice('/id', '$')),
+                choice('/id', '$'),
+                line(choice('/id', '$'), choice(line('(', '#value', ')'), '@'))
+            ),
+            choice('=','<=','=>','<>', '><'),
+            choice(None, '/id', '$')
         ),
-        ' '
+        ','
     ),
     '|'
 )
